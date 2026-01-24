@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <form>
+      <label for="Email">Email:</label>
+      <br /><input
+        type="email"
+        id="Email"
+        name="email"
+        required
+        minlength="5"
+        maxlength="30"
+        size="30"
+        placeholder="nhập email"
+        required
+      />
+
+      <br />
+      <label for="Password">Mật Khẩu:</label>
+      <br />
+      <input
+        type="password"
+        id="Password"
+        name="password"
+        required
+        minlength="5"
+        maxlength="30"
+        size="30"
+        placeholder="nhập password"
+        required
+      />
+      <label for="remeber-password">
+        <input
+          type="checkbox"
+          id="remeber-password"
+          name="remeber-password"
+          checked
+        />
+        nhớ mật khẩu
+      </label>
+      <br /><br />
+
+      <br /><button>Đăng nhập</button>
+    </form>
+  </body>
+</html>
