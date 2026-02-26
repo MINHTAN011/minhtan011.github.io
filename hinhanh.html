@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư Viện Hình Ảnh & Video - Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* CSS Riêng cho trang Thư viện ảnh */
+      .gallery-section-title {
+        text-align: center;
+        color: var(--ht-red);
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        margin: 60px 0 30px;
+        position: relative;
+      }
+      .gallery-section-title::after {
+        content: "✦";
+        display: block;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: var(--ht-gold);
+      }
+
+      /* Lưới hiển thị ảnh chung */
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 20px;
+        margin-bottom: 40px;
+      }
+      .photo-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+        height: 300px;
+      }
+      .photo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+      .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .photo-card:hover img {
+        transform: scale(1.1);
+      }
+      .photo-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(6, 78, 59, 0.9), transparent);
+        padding: 20px 15px 10px;
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+      }
+
+      /* Khối Album Tết Xưa - Tết Nay (Rút gọn còn 1 bên) */
+      .compare-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-bottom: 4px solid var(--ht-red);
+        max-width: 900px;
+        margin: 0 auto 50px;
+      }
+      .compare-item {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+      }
+      .compare-item img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .compare-label {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+      }
+      .label-past {
+        background-color: #555;
+        color: white;
+      }
+      .label-present {
+        background-color: var(--ht-red);
+        color: white;
+      }
+      .compare-title {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        font-weight: 600;
+        color: #4b5563;
+        font-size: 1.1rem;
+      }
+
+      /* Khối Video Ngắn (Tỉ lệ điện thoại 9:16) */
+      .video-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 0 20px;
+        margin-bottom: 60px;
+      }
+      .video-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid var(--ht-green);
+        width: 300px; /* Cố định chiều rộng cho form điện thoại */
+      }
+      /* Ép tỉ lệ dọc 9:16 cho video */
+      .video-card video {
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        display: block;
+        background: #000;
+      }
+      .video-title {
+        padding: 15px;
+        text-align: center;
+        color: var(--ht-green);
+        font-weight: bold;
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li><a href="phongTuc.html">Phong tục</a></li>
+          <li><a href="amthuc.html">Ẩm thực</a></li>
+          <li><a href="vanhoa.html">Văn hóa</a></li>
+          <li>
+            <a href="hinhanh.html" style="color: var(--ht-gold)"
+              >Hình ảnh & Video</a
+            >
+          </li>
+          <li><a href="kyuc.html">Câu chuyện ký ức</a></li>
+          <li><a href="lienhe.html">Liên hệ/Đóng góp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(185, 28, 28, 0.6), rgba(6, 78, 59, 0.6)),
+          url(&quot;images/banner-hinhanh.jpg&quot;) center/cover;
+        height: 35vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3rem">
+          Ký Ức Bằng Hình Ảnh
+        </h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Ngắm nhìn Hà Tiên qua dòng chảy thời gian
+        </p>
+      </div>
+    </section>
+
+    <main class="container">
+      <h2 class="gallery-section-title">Nhịp Thời Gian</h2>
+      <div class="compare-box">
+        <div class="compare-item">
+          <span class="compare-label label-past">TẾT XƯA</span>
+          <img src="images/cho-tet-xua.jpg" alt="Chợ Tết xưa" />
+        </div>
+        <div class="compare-item">
+          <span class="compare-label label-present">TẾT NAY</span>
+          <img src="images/cho-tet-nay.jpg" alt="Chợ Tết nay" />
+        </div>
+        <div class="compare-title">
+          Sự chuyển mình rực rỡ của Chợ Xuân Hà Tiên qua các thập kỷ
+        </div>
+      </div>
+
+      <hr
+        style="
+          border: 0;
+          height: 1px;
+          background: #ddd;
+          width: 80%;
+          margin: 0 auto 40px;
+        "
+      />
+
+      <h2 class="gallery-section-title" style="color: var(--ht-green)">
+        Thước Phim Mùa Xuân
+      </h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls poster="images/poster-cho-xuan.jpg">
+            <source src="./imga/hinhanh.mp4" type="video/mp4" />
+          </video>
+          <div class="video-title">Chợ Hoa Từ Trên Cao</div>
+        </div>
+
+        <div class="video-card">
+          <video controls poster="images/poster-phao-hoa.jpg">
+            <source src="./imga/hinhanh/1772123079496.mp4" type="video/mp4" />
+          </video>
+          <div class="video-title">Pháo Hoa Giao Thừa</div>
+        </div>
+      </div>
+
+      <hr
+        style="
+          border: 0;
+          height: 1px;
+          background: #ddd;
+          width: 80%;
+          margin: 0 auto 40px;
+        "
+      />
+
+      <h2 class="gallery-section-title">Khung Cảnh Hà Tiên</h2>
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img src="./imga/hinhanh/mít ướtt chung tình (2).jpg" alt="Biển Mũi Nai" />
+          <div class="photo-name">Biển Mũi Nai</div>
+        </div>
+        <div class="photo-card">
+          <img src="./imga/hinhanh/IMG_20260217_094207_584.jpg" alt="Bãi Nò" />
+          <div class="photo-name">Tượng Mạc Cửu</div>
+        </div>
+        <div class="photo-card">
+          <img src="images/bai-bang.jpg" alt="Bãi Bàng" />
+          <div class="photo-name">Bãi Bàng</div>
+        </div>
+        
+        <div class="photo-card">
+          <img src="images/cau-to-chau.jpg" alt="Cầu Tô Châu" />
+          <div class="photo-name">Cầu Tô Châu</div>
+        </div>
+        
+
+      <h2 class="gallery-section-title" style="color: var(--ht-red)">
+        Dấu Ấn Tâm Linh
+      </h2>
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img src="images/lang-mac-cuu.jpg" alt="Lăng Mạc Cửu" />
+          <div class="photo-name">Lăng Mạc Cửu</div>
+        </div>
+        <div class="photo-card">
+          <img src="images/chua-phu-dung.jpg" alt="Chùa Phù Dung" />
+          <div class="photo-name">Chùa Phù Dung</div>
+        </div>
+        <div class="photo-card">
+          <img src="images/thach-dong.jpg" alt="Thạch Động" />
+          <div class="photo-name">Thạch Động</div>
+        </div>
+        <div class="photo-card">
+          <img src="./imga/hinhanh/IMG_20260217_095414_810.jpg" alt="Đầm Đông Hồ" />
+          <div class="photo-name">Chùa Tam Bảo</div>
+        </div>
+      </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 20px; margin-bottom: 50px">
+          <a href="index.html" class="btn-journey"
+          >Trang Chủ</a
+        >
+      </div>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        ©Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

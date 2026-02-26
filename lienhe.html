@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên Hệ & Đóng Góp - Tết Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* CSS Riêng cho trang Liên Hệ */
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+
+      .contact-left,
+      .contact-right {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      /* Form Style */
+      .contact-form {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-top: 5px solid var(--ht-red);
+        margin-bottom: 30px;
+      }
+      .form-title {
+        color: var(--ht-red);
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #4b5563;
+      }
+      .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+      .form-control:focus {
+        outline: none;
+        border-color: var(--ht-green);
+      }
+      textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .button-group {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .btn-reset {
+        background-color: #6b7280; /* Màu xám cho nút Xóa */
+        color: white;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 12px 30px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn-reset:hover {
+        background-color: #4b5563;
+      }
+
+      /* Thông tin tác giả */
+      .author-info {
+        background: var(--ht-green-light);
+        padding: 25px;
+        border-radius: 15px;
+        border-left: 5px solid var(--ht-green);
+      }
+      .author-info h3 {
+        color: var(--ht-green);
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .author-info p {
+        margin-bottom: 8px;
+        color: #333;
+        line-height: 1.6;
+      }
+      .author-info strong {
+        color: var(--ht-red);
+      }
+
+      /* Google Map Container */
+      .map-container {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        min-height: 400px;
+        border-top: 5px solid var(--ht-gold);
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li><a href="phongTuc.html">Phong tục</a></li>
+          <li><a href="amthuc.html">Ẩm thực</a></li>
+          <li><a href="vanhoa.html">Văn hóa</a></li>
+          <li><a href="hinhanh.html">Hình ảnh & Video</a></li>
+          <li><a href="kyuc.html">Câu chuyện ký ức</a></li>
+          <li>
+            <a href="lienhe.html" style="color: var(--ht-gold)"
+              >Liên hệ/Đóng góp</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(240, 9, 9, 0.7), rgba(226, 155, 155, 0.7)),
+          url(&quot;images/banner-lienhe.jpg&quot;) center/cover;
+        height: 35vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3rem">Liên Hệ & Đóng Góp</h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Cùng nhau lưu giữ nét đẹp quê hương
+        </p>
+      </div>
+    </section>
+
+    <main class="contact-container">
+      <div class="contact-left">
+        <form
+          class="contact-form"
+          onsubmit="
+            alert(
+              'Cảm ơn bạn đã gửi đóng góp! Những ý kiến này sẽ giúp website hoàn thiện hơn.',
+            );
+            return false;
+          "
+          onreset="
+            return confirm('Bạn có chắc chắn muốn xóa hết thông tin vừa nhập?');
+          "
+        >
+          <h2 class="form-title">Gửi Ký Ức Hoặc Góp Ý</h2>
+
+          <div class="form-group">
+            <label for="fullname">Họ và tên của bạn:</label>
+            <input
+              type="text"
+              id="fullname"
+              class="form-control"
+              placeholder="Nhập tên của bạn..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email (tùy chọn):</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="example@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nội dung đóng góp / Câu chuyện của bạn:</label>
+            <textarea
+              id="message"
+              class="form-control"
+              placeholder="Hãy chia sẻ cảm nghĩ hoặc kỷ niệm về Tết Hà Tiên tại đây..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn-journey">Gửi Đóng Góp</button>
+            <button type="reset" class="btn-reset">Xóa Thông Tin</button>
+          </div>
+        </form>
+
+        <div class="author-info">
+          <h3>Thông Tin Tác Giả</h3>
+          <p><strong>Người thực hiện:</strong> Trương Nguyễn Minh Tân</p>
+          <p><strong>Trường:</strong> Đại Học Công Thương</p>
+          <p><strong>Lớp:</strong> 15DHTH07</p>
+          <p><strong>Dự án:</strong> Website giới thiệu Tết quê hương</p>
+          <p><strong>Quê quán:</strong> TP. Hà Tiên, tỉnh Kiên Giang</p>
+          <p style="margin-top: 10px; font-size: 0.9rem; font-style: italic">
+            "Website này được lập ra với mong muốn lưu giữ và quảng bá những nét
+            đẹp truyền thống của ngày Tết tại quê hương Hà Tiên đến với mọi
+            người."
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125438.25736733979!2d104.38793855013444!3d10.375752924375086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310821c17290d979%3A0xc622d106385cf081!2zSMOgIFRpw6pu, Kiên Giang, Việt Nam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        © Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

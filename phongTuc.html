@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phong Tục & Nghi Lễ Tết Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Timeline CSS cho Trước - Trong - Sau Tết */
+      .timeline-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+      .timeline-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-top: 5px solid var(--ht-red);
+        position: relative;
+      }
+      .timeline-card:nth-child(2) {
+        border-color: var(--ht-gold);
+      }
+      .timeline-card:nth-child(3) {
+        border-color: var(--ht-green);
+      }
+
+      .timeline-title {
+        font-size: 1.5rem;
+        color: var(--ht-red);
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+      }
+      .timeline-list {
+        list-style: none;
+        padding: 0;
+      }
+      .timeline-list li {
+        padding-left: 25px;
+        margin-bottom: 15px;
+        position: relative;
+        color: #4b5563;
+        line-height: 1.6;
+      }
+      .timeline-list li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        color: var(--ht-red);
+      }
+      .local-highlight {
+        background-color: var(--ht-red-light);
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        border-left: 3px solid var(--ht-red);
+      }
+
+      /* Layout cho phần địa điểm đặc trưng */
+      .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+      .flex-content,
+      .flex-image {
+        flex: 1;
+        min-width: 300px;
+      }
+      .order-1 {
+        order: 1;
+      }
+      .order-2 {
+        order: 2;
+      }
+      @media (max-width: 768px) {
+        .order-1,
+        .order-2 {
+          order: unset;
+        }
+      }
+
+      .custom-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+      .custom-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+        color: #4b5563;
+      }
+      .custom-list li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li>
+            <a href="phongTuc.html" style="color: var(--ht-gold)">Phong tục</a>
+          </li>
+          <li><a href="amthuc.html">Ẩm thực</a></li>
+          <li><a href="vanhoa.html">Văn hóa</a></li>
+          <li><a href="hinhanh.html">Hình ảnh</a></li>
+          <li><a href="kyuc.html">Câu chuyện ký ức</a></li>
+          <li><a href="lienhe.html">Liên hệ/Đóng góp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(185, 28, 28, 0.8), rgba(82, 70, 70, 0.8)),
+          url(&quot;images/banner-phongtuc.jpg&quot;) center/cover;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3.5rem; margin-bottom: 10px">
+          Phong Tục & Nghi Lễ
+        </h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Dòng chảy thời gian và nét đẹp tín ngưỡng vùng biên thùy
+        </p>
+      </div>
+    </section>
+
+    <main class="container">
+      
+
+       <h2 class="section-title font-display text-center">Tiến Trình Đón Tết</h2>
+<div class="timeline-container">
+    
+    <div class="timeline-card">
+        <img src="./imga/phongtuc/IMG_20260226_123656 (1).jpg"  class="timeline-img">
+        
+        <h3 class="timeline-title">Trước Tết</h3>
+        <ul class="timeline-list">
+            <li><strong>23 Tháng Chạp:</strong> Cúng đưa Ông Công Ông Táo chầu trời.</li>
+            <li><strong>Dọn dẹp nhà cửa:</strong> Trang hoàng lại nhà cửa, dán câu đối đỏ.</li>
+            <li><strong>Gói bánh:</strong> Gia đình quây quần gói bánh.
+                <div class="local-highlight">
+                    <strong>Nét riêng:</strong> Người Hà Tiên chủ yếu gói <b>Bánh Tét</b> thay vì bánh chưng. Các gia đình ngư dân còn có tục <b>lau chùi và cúng ghe tàu</b> dịp cuối năm để tạ ơn biển.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="timeline-card">
+        <img src=""  class="timeline-img">
+        
+        <h3 class="timeline-title" style="color: var(--ht-gold);">Trong Tết</h3>
+        <ul class="timeline-list">
+            <li><strong>Đêm Giao Thừa:</strong> Cúng ngoài trời (bàn thiên) và cúng gia tiên.</li>
+            <li><strong>Mùng 1 - Mùng 3:</strong> Chúc Tết ông bà, cha mẹ, lì xì xông đất.</li>
+            <li><strong>Đi chùa, đi đình:</strong> Xuất hành xin lộc đầu năm.
+                <div class="local-highlight">
+                    <strong>Nét riêng:</strong> Không chỉ đi chùa, người dân Hà Tiên bắt buộc phải <b>viếng Lăng Mạc Cửu</b> để nhớ ơn người khai trấn và hái lộc trên núi Bình San.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="timeline-card">
+        <img src="./imga/phongtuc/TAU-CA-RA-KHOI.jpg"  class="timeline-img">
+        
+        <h3 class="timeline-title" style="color: var(--ht-green);">Sau Tết</h3>
+        <ul class="timeline-list">
+            <li><strong>Mùng 3 hoặc Mùng 4:</strong> Làm lễ Hóa Vàng (đưa ông bà).</li>
+            <li><strong>Trở lại công việc:</strong> Chọn ngày tốt để khai trương.</li>
+            <li><strong>Lễ hội đầu xuân:</strong> Tham gia các hội hè rộn rã.
+                <div class="local-highlight">
+                    <strong>Nét riêng:</strong> Ngư dân làm <b>Lễ Mở Biển cúng Lăng Ông Nam Hải</b> ra khơi. Cùng với đó là Lễ hội Tao Đàn Chiêu Anh Các vào Rằm tháng Giêng.
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        
+      </div>
+
+      <hr style="border: 1px solid #ddd; margin: 40px 0" />
+
+      
+
+      <div class="text-center" style="margin-top: 40px">
+        <a href="index.html" class="btn-journey"
+          >Trang Chủ</a
+        >
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 60px;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        ©Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu Chuyện Ký Ức - Tết Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* CSS Riêng cho trang Ký Ức */
+      .story-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .story-card {
+        display: flex;
+        flex-wrap: wrap;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+        border-left: 5px solid var(--ht-red);
+        transition: transform 0.3s;
+      }
+      .story-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Đảo ngược bố cục cho thẻ thứ 2 để trang bớt nhàm chán */
+      .story-card:nth-child(even) {
+        border-left: none;
+        border-right: 5px solid var(--ht-green);
+        flex-direction: row-reverse;
+      }
+
+      .story-img {
+        flex: 1;
+        min-width: 300px;
+      }
+      .story-img img {
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        object-fit: cover;
+      }
+
+      .story-content {
+        flex: 1;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .story-title {
+        font-family: "Playfair Display", serif;
+        color: var(--ht-red);
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      .story-card:nth-child(even) .story-title {
+        color: var(--ht-green);
+      }
+
+      .story-text {
+        color: #4b5563;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        font-style: italic;
+      }
+
+      .quote-icon {
+        font-size: 2rem;
+        color: var(--ht-gold);
+        opacity: 0.5;
+        margin-bottom: 10px;
+        font-family: serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li><a href="phongTuc.html">Phong tục</a></li>
+          <li><a href="amthuc.html">Ẩm thực</a></li>
+          <li><a href="vanhoa.html">Văn hóa</a></li>
+          <li><a href="hinhanh.html">Hình ảnh & Video</a></li>
+          <li>
+            <a href="kyuc.html" style="color: var(--ht-gold)"
+              >Câu chuyện ký ức</a
+            >
+          </li>
+          <li><a href="lienhe.html">Liên hệ/Đóng góp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(185, 28, 28, 0.7), rgba(187, 82, 74, 0.7)),
+          url(&quot;images/banner-kyuc.jpg&quot;) center/cover;
+        height: 35vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3rem">
+          Hoài Niệm Ngày Xuân
+        </h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Những mảnh ghép đong đầy tình thân
+        </p>
+      </div>
+    </section>
+
+    <main class="story-container">
+      <div class="story-card">
+        <div class="story-img">
+          <img src="./imga/kyuc/images.jpg" alt="Trẻ em háo hức ngày Tết" />
+        </div>
+        <div class="story-content">
+          <div class="quote-icon">❝</div>
+          <h2 class="story-title">Kỷ Niệm Tết Tuổi Thơ</h2>
+          <p class="story-text">
+            Là háo hức thử bộ quần áo mới mẹ mua từ 27 Tết mà không nỡ cởi ra.
+            Là đêm 29 ráng thức canh nồi bánh tét cùng bà nhưng lại ngủ gục trên
+            chiếu lúc nào không hay. Tết tuổi thơ là những niềm vui giản đơn, vô
+            lo và trọn vẹn nhất.
+          </p>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-img">
+          <img src="./imga/kyuc/Mt13.jpg" alt="Chuyến xe trở về Hà Tiên" />
+        </div>
+        <div class="story-content">
+          <div class="quote-icon">❝</div>
+          <h2 class="story-title">Tết Khi Xa Quê – Trở Về</h2>
+          <p class="story-text">
+            Lớn lên đi học, đi làm xa, khoảnh khắc bước xuống bến xe, ngửi thấy
+            mùi gió biển mằn mặn quen thuộc của Hà Tiên là bao mệt mỏi tan biến
+            hết. Dù vé xe có đắt đỏ hay chật chội, chuyến xe trở về nhà luôn là
+            chuyến xe hạnh phúc nhất trong năm.
+          </p>
+        </div>
+      </div>
+
+      
+
+      <div class="text-center" style="margin-top: 50px">
+          <a href="index.html" class="btn-journey"
+          >Trang Chủ</a
+        >
+      </div>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        ©Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

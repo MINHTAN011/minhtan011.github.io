@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ẩm Thực Ngày Tết - Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* CSS riêng cho trang Ẩm Thực */
+      .food-category-title {
+        font-size: 2.2rem;
+        color: var(--ht-red);
+        margin: 50px 0 20px;
+        border-bottom: 3px solid var(--ht-gold);
+        display: inline-block;
+        padding-bottom: 10px;
+        font-family: "Playfair Display", serif;
+      }
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+      }
+      .food-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        height: 380px; /* Tăng chiều cao một chút để chứa thêm dòng Ý nghĩa */
+        cursor: pointer;
+      }
+      .food-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .food-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .food-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(6, 78, 59, 0.92); /* Nền xanh lá đậm Hà Tiên */
+        color: white;
+        padding: 25px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .food-card:hover .food-overlay {
+        opacity: 1;
+      }
+
+      .food-overlay h3 {
+        color: var(--ht-gold);
+        margin-bottom: 10px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        border-bottom: 1px solid var(--ht-red);
+        padding-bottom: 10px;
+      }
+      .food-overlay p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+      .food-overlay .highlight {
+        color: var(--ht-gold);
+        font-weight: bold;
+      }
+
+      .food-meaning {
+        background-color: var(--ht-red-light);
+        color: var(--ht-red);
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-left: 4px solid var(--ht-red);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li><a href="phongTuc.html">Phong tục</a></li>
+          <li>
+            <a href="amthuc.html" style="color: var(--ht-gold)">Ẩm thực</a>
+          </li>
+          <li><a href="vanhoa.html">Văn hóa</a></li>
+          <li><a href="hinhanh.html">Hình ảnh</a></li>
+          <li><a href="kyuc.html">Câu chuyện ký ức</a></li>
+          <li><a href="lienhe.html">Liên hệ/Đóng góp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(185, 28, 28, 0.7), rgba(6, 78, 59, 0.7)),
+          url(&quot;images/banner-amthuc.jpg&quot;) center/cover;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3.5rem; margin-bottom: 10px">
+          Ẩm Thực Ngày Xuân
+        </h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Hương vị biển khơi - Đậm đà bản sắc giao thoa
+        </p>
+      </div>
+    </section>
+
+    <main class="container">
+      <p
+        class="text-center"
+        style="
+          font-size: 1.1rem;
+          color: #4b5563;
+          max-width: 800px;
+          margin: 0 auto;
+        "
+      >
+        Mâm cỗ Tết ở Hà Tiên là bức tranh rực rỡ của sự giao thoa văn hóa Việt -
+        Hoa - Khmer và hương vị mặn mòi của biển cả. Mỗi món ăn dâng lên ông bà
+        tổ tiên không chỉ ngon miệng mà còn mang những ý nghĩa thiêng liêng cầu
+        chúc cho năm mới.
+      </p>
+
+      <div class="text-center">
+        <h2 class="food-category-title">I. Bánh Truyền Thống</h2>
+      </div>
+      <div class="food-grid">
+        <div class="food-card">
+          <img src="./imga/amthuc/IMG_20260226_123656.jpg" alt="Bánh Tét Hà Tiên" />
+          <div class="food-overlay">
+            <h3>Bánh Tét</h3>
+            <p>
+              Gói bằng lá chuối, nếp dẻo thơm với nhân mỡ hành đậu xanh hoặc
+              nhân chuối nếp cẩm.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Tượng trưng cho sự no ấm, sung túc. Hình ảnh đòn bánh bọc
+              lá chuối thể hiện sự bao bọc, sum vầy của tình mẫu tử, tình cảm
+              gia đình.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="./imga/amthuc/IMG_20260226_105143_531.jpg" alt="Bánh Tổ" />
+          <div class="food-overlay">
+            <h3>Bánh Tổ (Nian Gao)</h3>
+            <p>
+              Làm từ bột nếp và đường, được hấp chín, có màu nâu nhạt. Món ăn
+              chịu ảnh hưởng sâu sắc từ cộng đồng người Hoa tại Hà Tiên.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: "Nian Gao" đồng âm với từ "Năm mới cao thăng", mang lời
+              chúc năm mới tiến bộ, thăng tiến và mọi sự ngọt ngào, kết dính bền
+              chặt.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="images/banh-it.jpg" alt="Bánh Ít" />
+          <div class="food-overlay">
+            <h3>Bánh Ít Nhân Dừa</h3>
+            <p>
+              Vỏ bằng bột nếp, nhân dừa xào đường ngọt lịm, thường được đặt trên
+              mâm cúng gia tiên.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Món quà nhỏ bé nhưng chứa đựng chữ "hiếu" to lớn dâng lên
+              tổ tiên, thể hiện sự khiêm nhường và ngọt ngào.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2 class="food-category-title">II. Món Mặn Đậm Đà</h2>
+      </div>
+      <div class="food-grid">
+        <div class="food-card">
+          <img src="images/thit-kho.jpg" alt="Thịt kho rệu" />
+          <div class="food-overlay">
+            <h3>Thịt Kho Hột Vịt</h3>
+            <p>
+              Thịt ba rọi rút sườn kho rệu với hột vịt trong nước dừa tươi, thấm
+              đẫm nước mắm Phú Quốc đặc sản.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Miếng thịt vuông vức đi kèm hột vịt tròn trịa tượng trưng
+              cho "mọi sự vuông tròn", cân bằng âm dương, gia đạo vạn sự hanh
+              thông.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="./imga/amthuc/Screenshot_20260226-114353.png" alt="Bún kèn Hà Tiên" />
+          <div class="food-overlay">
+            <h3>Bún Kèn Hà Tiên</h3>
+            <p>
+              Cá lóc hoặc cá rựa xay nhuyễn xào sả ớt, nấu với nước cốt dừa. Đặc
+              sản không thể thiếu đãi khách đầu xuân.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Sự kết hợp của cá biển và nước cốt dừa thể hiện sự trù
+              phú, hào sảng của thiên nhiên vùng biển Kiên Giang.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="images/ca-xiu.jpg" alt="Cà xỉu muối" />
+          <div class="food-overlay">
+            <h3>Cà Xỉu Trộn Chua Ngọt</h3>
+            <p>
+              Đặc sản vùng bãi bùn Hà Tiên, muối mặn rồi trộn cùng tỏi, ớt, giấm
+              đường. Ăn cực kỳ "đưa cơm" và chống ngấy ngày Tết.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Món ăn dân dã gợi nhớ về cội nguồn, lao động lấm lem của
+              cha ông nhưng mang lại hương vị mặn mòi, đậm đà tình quê.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2 class="food-category-title">III. Món Ngọt Khai Xuân</h2>
+      </div>
+      <div class="food-grid">
+        <div class="food-card">
+          <img src="images/xoi-ngot.jpg" alt="Xôi ngọt Hà Tiên" />
+          <div class="food-overlay">
+            <h3>Xôi Xiêm (Xôi Ngọt)</h3>
+            <p>
+              Xôi nếp dẻo nấu cùng nước cốt dừa sầu riêng hoặc lá dứa, hương vị
+              béo ngậy vô cùng hấp dẫn.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Sự dính dẻo của nếp tượng trưng cho tình cảm gia đình gắn
+              bó keo sơn, không thể tách rời trong năm mới.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="images/mut-tet.jpg" alt="Khay mứt Tết" />
+          <div class="food-overlay">
+            <h3>Khay Mứt Ngày Xuân</h3>
+            <p>
+              Gồm mứt dừa non béo ngậy, mứt gừng cay nồng và mứt me chua ngọt
+              nhâm nhi cùng trà nóng.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Khay mứt đủ vị Chua - Cay - Ngọt - Bùi tượng trưng cho
+              những hương vị của cuộc sống. Gừng cay khuyên răn con cháu sống
+              thủy chung, trọn tình.
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <img src="images/che-troi-nuoc.jpg" alt="Chè trôi nước" />
+          <div class="food-overlay">
+            <h3>Chè Trôi Nước</h3>
+            <p>
+              Viên chè tròn xoe nhân đậu xanh thơm bùi, nước đường sắn dây nêm
+              chút gừng thái chỉ.
+            </p>
+            <div class="food-meaning">
+              Ý nghĩa: Mong cầu một năm mới mọi việc đều trôi chảy, suôn sẻ và
+              hạnh phúc luôn viên mãn, tròn đầy như những viên chè.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 50px">
+          <a href="index.html" class="btn-journey"
+          >Trang Chủ</a
+        >
+      </div>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 60px;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        © 2026 Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

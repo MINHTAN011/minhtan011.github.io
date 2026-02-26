@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Văn Hóa & Lễ Hội Tết - Hà Tiên</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .culture-block {
+        background-color: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 50px;
+        border-top: 4px solid var(--ht-red);
+      }
+      .culture-block:nth-child(even) {
+        border-color: var(--ht-green);
+      }
+
+      .culture-title {
+        font-size: 2rem;
+        color: var(--ht-red);
+        margin-bottom: 15px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .culture-content {
+        color: #4b5563;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+      }
+      .culture-content ul {
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+      .culture-content li {
+        margin-bottom: 8px;
+      }
+
+      .meaning-box {
+        background-color: var(--ht-green-light);
+        border-left: 4px solid var(--ht-green);
+        padding: 15px;
+        border-radius: 0 8px 8px 0;
+        margin-top: 15px;
+        font-style: italic;
+      }
+
+      /* Lưới 3 hình ảnh cho mỗi phần */
+      .multi-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .multi-gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+      }
+      .multi-gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Khối Tổng kết */
+      .summary-block {
+        background: linear-gradient(135deg, var(--ht-red), #8b0000);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 40px;
+        box-shadow: 0 10px 20px rgba(185, 28, 28, 0.2);
+      }
+      .summary-block h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        color: var(--ht-gold);
+      }
+      .summary-list {
+        list-style: none;
+        padding: 0;
+        display: inline-block;
+        text-align: left;
+      }
+      .summary-list li {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        padding-left: 30px;
+        position: relative;
+      }
+      .summary-list li::before {
+        content: "🌊";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo font-display">Tết Hà Tiên</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Giới thiệu</a></li>
+          <li><a href="phongTuc.html">Phong tục</a></li>
+          <li><a href="amthuc.html">Ẩm thực</a></li>
+          <li>
+            <a href="vanhoa.html" style="color: var(--ht-gold)">Văn hóa</a>
+          </li>
+          <li><a href="hinhanh.html">Hình ảnh</a></li>
+          <li><a href="kyuc.html">Câu chuyện ký ức</a></li>
+          <li><a href="lienhe.html">Liên hệ/Đóng góp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      style="
+        background:
+          linear-gradient(rgba(185, 28, 28, 0.7), rgba(6, 78, 59, 0.7)),
+          url(&quot;images/banner-vanhoa.jpg&quot;) center/cover;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      "
+    >
+      <div>
+        <h1 class="font-display" style="font-size: 3.5rem; margin-bottom: 10px">
+          Văn Hóa & Lễ Hội
+        </h1>
+        <p style="font-size: 1.1rem; font-style: italic">
+          Nhịp sống rộn ràng nơi phố biển đầu xuân
+        </p>
+      </div>
+    </section>
+
+    <main class="container">
+      <div class="culture-block">
+        <h2 class="culture-title" style="color: var(--ht-green)">
+          1. Lễ Hội & Sinh Hoạt Tâm Linh Đầu Năm
+        </h2>
+        <div class="culture-content">
+          <p>
+            Mùa xuân Hà Tiên là sự hòa quyện tuyệt đẹp giữa cảnh sắc thiên nhiên
+            và chiều sâu văn hóa tín ngưỡng. Trong dịp Tết, người dân thường có
+            các hoạt động:
+          </p>
+          <ul>
+            <li>
+              <strong>Viếng Lăng Mạc Cửu:</strong> Thắp nén hương thơm để cầu
+              tài lộc, bình an gia đạo và tưởng nhớ công lao to lớn của người đã
+              khai phá ra mảnh đất Hà Tiên trù phú.
+            </li>
+            <li>
+              <strong>Du xuân Núi Bình San:</strong> Tản bộ dưới những tán cây
+              xanh mát, xin lộc đầu năm trên ngọn núi thiêng.
+            </li>
+            <li>
+              <strong>Lễ Cầu Ngư:</strong> Trước chuyến vươn khơi đầu tiên của
+              năm mới, ngư dân thành tâm làm lễ tại Lăng Ông Nam Hải để cầu bình
+              an trước sóng gió.
+            </li>
+          </ul>
+          <div
+            class="meaning-box"
+            style="
+              background-color: var(--ht-red-light);
+              border-left-color: var(--ht-red);
+            "
+          >
+            <strong>Nét đặc trưng:</strong> Các hoạt động này là minh chứng rõ
+            nét cho sự kết hợp hài hòa giữa tín ngưỡng truyền thống của dân tộc
+            và nét văn hóa bám biển đặc trưng của người dân nơi đây.
+          </div>
+        </div>
+        <div class="multi-gallery">
+          <img src="images/tam-linh-1.jpg" alt="Dâng hương Lăng Mạc Cửu" />
+          <img src="images/tam-linh-2.jpg" alt="Du xuân đầu năm" />
+          <img src="images/tam-linh-3.jpg" alt="Cúng Lăng Ông Nam Hải" />
+        </div>
+      </div>
+
+      <div class="culture-block">
+        <h2 class="culture-title">2. Không Khí Tết Ở Chợ Quê & Đường Làng</h2>
+        <div class="culture-content">
+          <p>
+            Nhịp sống ngày Tết ở Hà Tiên mang một âm hưởng rất riêng, vừa rộn rã
+            phố thị, vừa mộc mạc tình quê.
+          </p>
+          <ul>
+            <li>
+              <strong>Những ngày giáp Tết:</strong> Chợ Hà Tiên khoác lên mình
+              tấm áo rực rỡ. Khắp nơi bày bán la liệt các đặc sản như hải sản
+              khô tẩm ướp, mắm ruốc thơm lừng, bánh mứt ngọt ngào và những cành
+              mai vàng chưng Tết. Người dân tấp nập mua sắm, chuẩn bị tươm tất
+              cho mâm cúng giao thừa.
+            </li>
+            <li>
+              <strong>Trong các xóm biển:</strong> Không khí hân hoan rộn rã.
+              Các gia đình cùng nhau dọn dẹp nhà cửa, treo cờ Tổ quốc và giăng
+              đèn lồng đỏ.
+            </li>
+            <li>
+              <strong>Ngày đầu năm:</strong> Trẻ em xúng xính trong quần áo mới
+              đi chúc Tết ông bà. Các gia đình quây quần sum họp, ăn uống rôm rả
+              và cùng nhau tổ chức những chuyến du xuân hóng gió ven biển.
+            </li>
+          </ul>
+        </div>
+        <div class="multi-gallery">
+          <img src="images/cho-tet-1.jpg" alt="Chợ hoa xuân Hà Tiên" />
+          <img src="images/cho-tet-2.jpg" alt="Gian hàng hải sản khô" />
+          <img src="images/cho-tet-3.jpg" alt="Xóm biển ngập sắc cờ hoa" />
+        </div>
+      </div>
+
+      <div class="summary-block">
+        <h3>Tổng Đặc Điểm Tết Hà Tiên</h3>
+        <ul class="summary-list">
+          <li>
+            Không khí vui tươi, nhộn nhịp, mang đậm chất biển đảo miền Tây Nam
+            Bộ.
+          </li>
+          <li>
+            Nổi bật với các hoạt động thể thao, trò chơi dân gian đặc thù như
+            đua ghe xuân.
+          </li>
+          <li>
+            Là sự kết hợp hoàn hảo giữa tâm linh, truyền thống lịch sử và du
+            lịch sinh thái biển.
+          </li>
+        </ul>
+        <br />
+        <a
+          href="index.html"
+          class="btn-journey"
+          style="
+            background-color: var(--ht-green);
+            color: white;
+            border: 2px solid white;
+            margin-top: 20px;
+          "
+          >Trang Chủ</a
+        >
+      </div>
+    </main>
+
+    <footer
+      style="
+        background-color: var(--ht-green);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 60px;
+      "
+    >
+      <p style="font-size: 0.9rem; opacity: 0.8">
+        ©Xây dựng website về Tết quê hương Hà Tiên.
+      </p>
+    </footer>
+  </body>
+</html>

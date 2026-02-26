@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap");
+
+:root {
+  --ht-green: #a1091d; /* Xanh lá đậm */
+  --ht-green-light: #ecf3f0;
+  --ht-red: #b91c1c; /* Đỏ Tết */
+  --ht-red-light: #fef2f2;
+  --ht-gold: #d4af37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--ht-red-light); /* Nền đỏ nhạt ấm cúng */
+  color: #333;
+}
+
+.font-display {
+  font-family: "Playfair Display", serif;
+}
+
+/* Menu Navigation */
+header {
+  background-color: var(--ht-green);
+  padding: 15px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: var(--ht-gold);
+}
+
+/* Layout chung */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--ht-red);
+  margin-bottom: 20px;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--ht-red);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Các mục nổi bật (Grid 3 cột) */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Hình ảnh tiêu biểu (Grid 2 cột, nhiều hàng) */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+/* Nút bấm (Style bạn yêu cầu) */
+.btn-journey {
+  background-color: var(--ht-red);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+.btn-journey:hover {
+  background-color: #991b1b;
+}
+
+/* Card Hình ảnh có Overlay */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-align: center;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-overlay h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+/* Phần thêm trong phong-tục */
+.timeline-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.timeline-card:hover .timeline-img {
+  transform: scale(1.03);
+}
